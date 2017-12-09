@@ -26,26 +26,22 @@ public class stream_processing {
 		int multiplier = 0;
 		boolean trash = false;
 		for(int cursor = 0; cursor < current.length; cursor++){
-			if(current[cursor] == '!'){
+			if(current[cursor] == '!')
 				cursor++;
-				continue;
-			}
-			else if(current[cursor] == '<' && !trash){
+			else if(current[cursor] == '<' && !trash)
 				trash = true;
-				continue;
-			}
-			else if(current[cursor] == '>' && trash){
+			else if(current[cursor] == '>' && trash)
 				trash = false;
-				continue;
-			}
-			else if(current[cursor] == '{' && !trash)
-				multiplier++;
-			else if(current[cursor] == '}' && !trash){
-				score+=multiplier;
-				if(multiplier > 0)
-					multiplier--;
-			}
-			if(trash)
+			else if(!trash){
+				if(current[cursor] == '{')
+					multiplier++;
+				else if(current[cursor] == '}'){
+					score+=multiplier;
+					if(multiplier > 0)
+						multiplier--;
+				}
+			}				
+			else if(trash)
 				tashCounter++;
 		}
 		System.out.println("Part 1 - " + score +
