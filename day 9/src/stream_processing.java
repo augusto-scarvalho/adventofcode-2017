@@ -45,10 +45,8 @@ public class stream_processing {
 				if(multiplier > 0)
 					multiplier--;
 			}
-			if(trash)){
-				System.out.println(current[cursor]);
+			if(trash)
 				tashCounter++;
-			}
 		}
 		System.out.println("Part 1 - " + score +
 				"\nPart 2 - " + tashCounter);
