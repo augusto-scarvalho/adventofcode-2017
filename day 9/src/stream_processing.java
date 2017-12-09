@@ -45,7 +45,7 @@ public class stream_processing {
 				if(multiplier > 0)
 					multiplier--;
 			}
-			if(trash && !(current[cursor] == '!')){
+			if(trash)){
 				System.out.println(current[cursor]);
 				tashCounter++;
 			}
